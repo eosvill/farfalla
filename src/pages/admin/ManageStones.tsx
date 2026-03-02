@@ -18,7 +18,7 @@ export default function ManageStones() {
 
     const fetchStones = async () => {
         setLoading(true)
-        const { data, error } = await supabase.from('stones').select('*').order('created_at', { ascending: false })
+        const { data } = await supabase.from('stones').select('*').order('created_at', { ascending: false })
         if (data) setStones(data)
         setLoading(false)
     }

@@ -15,7 +15,7 @@ export default function ManageCollections() {
 
     const fetchCollections = async () => {
         setLoading(true)
-        const { data, error } = await supabase.from('collections').select('*').order('created_at', { ascending: false })
+        const { data } = await supabase.from('collections').select('*').order('created_at', { ascending: false })
         if (data) setCollections(data)
         setLoading(false)
     }
