@@ -171,15 +171,29 @@ export default function Tienda() {
                                             </span>
                                         </div>
                                     </div>
-                                    <div style={{ padding: '14px 4px 8px' }}>
-                                        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '1.05rem', color: '#2D2420', margin: '0 0 4px', lineHeight: 1.3 }}>
+                                    <div style={{ padding: '14px 12px 16px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                                        <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '1.2rem', color: '#2D2420', margin: '0 0 6px', lineHeight: 1.3 }}>
                                             {product.nombre}
                                         </p>
                                         {product.precio && (
-                                            <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.95rem', fontWeight: 700, color: '#C9954A', margin: 0, letterSpacing: '0.03em' }}>
+                                            <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', fontWeight: 700, color: '#C9954A', margin: '0 0 20px', letterSpacing: '0.03em' }}>
                                                 {formatPrice(product.precio)}
                                             </p>
                                         )}
+                                        <div
+                                            style={{
+                                                marginTop: 'auto',
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px',
+                                                background: '#1A1A1A', color: '#FFFFFF', fontFamily: "'Lato', sans-serif",
+                                                fontSize: '0.8rem', fontWeight: 700, textDecoration: 'none',
+                                                borderRadius: '6px', transition: 'background 0.2s', width: '100%',
+                                                boxSizing: 'border-box'
+                                            }}
+                                            onMouseEnter={e => (e.currentTarget.style.background = '#333')}
+                                            onMouseLeave={e => (e.currentTarget.style.background = '#1A1A1A')}
+                                        >
+                                            Comprar en Tienda ↗
+                                        </div>
                                     </div>
                                 </div>
                             </a>
@@ -195,6 +209,9 @@ export default function Tienda() {
                     gap: 24px;
                 }
                 .tienda-card {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
                     border-radius: 12px;
                     overflow: hidden;
                     background: #FFF;
