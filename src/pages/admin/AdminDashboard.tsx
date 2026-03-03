@@ -19,7 +19,7 @@ const CARD_DEFS = [
         desc: 'Crea y gestiona las categorías del catálogo.',
         to: '/admin/categorias',
         table: 'categorias',
-        imageField: 'imagen',
+        imageField: 'imagen_card',
     },
     {
         label: 'Tipos de Piedra',
@@ -93,19 +93,18 @@ export default function AdminDashboard() {
                             <div style={{
                                 width: '100%', height: '160px', background: '#F2EEE9',
                                 position: 'relative', overflow: 'hidden',
+                                display: 'flex', alignItems: 'center', justifyContent: 'center'
                             }}>
                                 {card.loading ? (
-                                    <div style={{ width: '100%', height: '100%', background: 'linear-gradient(90deg, #EEE 25%, #F5F5F5 50%, #EEE 75%)', backgroundSize: '200% 100%', animation: 'shimmer 1.4s infinite' }} />
+                                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, #EEE 25%, #F5F5F5 50%, #EEE 75%)', backgroundSize: '200% 100%', animation: 'shimmer 1.4s infinite' }} />
                                 ) : card.previewImg ? (
                                     <img
                                         src={card.previewImg}
                                         alt={card.label}
-                                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                                        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
                                     />
                                 ) : (
-                                    <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                        <span style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.8rem', color: '#C0B8B0' }}>Sin imagen</span>
-                                    </div>
+                                    <span style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.8rem', color: '#C0B8B0', zIndex: 1 }}>Sin imagen</span>
                                 )}
                                 {/* Count badge */}
                                 <div style={{
@@ -114,6 +113,7 @@ export default function AdminDashboard() {
                                     borderRadius: '20px', padding: '4px 12px',
                                     fontFamily: "'Lato', sans-serif", fontSize: '0.78rem',
                                     fontWeight: 700, color: '#FFFFFF', letterSpacing: '0.04em',
+                                    zIndex: 2
                                 }}>
                                     {card.loading ? '…' : `${card.count} item${card.count !== 1 ? 's' : ''}`}
                                 </div>
