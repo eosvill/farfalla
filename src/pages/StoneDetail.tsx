@@ -129,7 +129,7 @@ export default function StoneDetail() {
             </section>
 
             {/* Back link */}
-            <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '24px 24px 0', position: 'relative', zIndex: 10 }}>
+            <div style={{ maxWidth: '1200px', margin: '-10px auto 0', padding: '0 24px 24px', position: 'relative', zIndex: 10 }}>
                 <Link to="/#piedras" style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.82rem', color: '#9A8E85', textDecoration: 'none', letterSpacing: '0.05em' }}>
                     ← Volver al inicio
                 </Link>
