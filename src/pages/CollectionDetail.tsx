@@ -87,7 +87,7 @@ export default function CollectionDetail() {
         return (
             <div style={{ padding: '160px 40px', textAlign: 'center', background: '#F9F7F4', minHeight: '60vh' }}>
                 <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', color: '#2D2420' }}>Colección no encontrada</h2>
-                <Link to="/" style={{ color: '#C9954A', textDecoration: 'underline', marginTop: '20px', display: 'inline-block', fontFamily: "'Lato', sans-serif" }}>Volver al inicio</Link>
+                <Link to="/#colecciones" style={{ color: '#C9954A', textDecoration: 'underline', marginTop: '20px', display: 'inline-block', fontFamily: "'Lato', sans-serif" }}>Volver al inicio</Link>
             </div>
         )
     }
@@ -132,7 +132,7 @@ export default function CollectionDetail() {
 
             {/* Back link */}
             <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 40px' }}>
-                <Link to="/" style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.82rem', color: '#9A8E85', textDecoration: 'none', letterSpacing: '0.05em' }}>
+                <Link to="/#colecciones" style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.82rem', color: '#9A8E85', textDecoration: 'none', letterSpacing: '0.05em' }}>
                     ← Volver al inicio
                 </Link>
             </div>
