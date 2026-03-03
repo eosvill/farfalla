@@ -48,7 +48,7 @@ export default function Footer() {
 
                     {/* Instagram Link */}
                     <motion.a
-                        href="https://instagram.com/farfalla.bijou"
+                        href="https://www.instagram.com/farfalla.bijou/"
                         target="_blank"
                         rel="noopener noreferrer"
                         initial={{ opacity: 0 }}
