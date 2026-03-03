@@ -129,8 +129,14 @@ export default function ManagePiedras() {
                         <textarea value={form.descripcion_corta} onChange={e => set('descripcion_corta', e.target.value)} rows={3} style={{ ...inputSt, resize: 'vertical' }} placeholder="Breve descripción energética / mística de la piedra…" />
                     </div>
 
-                    <ImageUploader label="Imagen Hero (desktop)" value={form.imagen_hero} onChange={v => set('imagen_hero', v)} folder="tipos_piedra" />
-                    <ImageUploader label="Imagen Tarjeta" value={form.imagen_card} onChange={v => set('imagen_card', v)} folder="tipos_piedra" />
+                    <div>
+                        <ImageUploader label="Imagen Hero (desktop)" value={form.imagen_hero} onChange={v => set('imagen_hero', v)} folder="tipos_piedra" />
+                        <p style={{ margin: '4px 0 0', fontSize: '0.75rem', color: '#888', fontFamily: "'Lato', sans-serif" }}>Recomendado: 1920 x 800 px (Apaisada)</p>
+                    </div>
+                    <div>
+                        <ImageUploader label="Imagen Tarjeta" value={form.imagen_card} onChange={v => set('imagen_card', v)} folder="tipos_piedra" />
+                        <p style={{ margin: '4px 0 0', fontSize: '0.75rem', color: '#888', fontFamily: "'Lato', sans-serif" }}>Recomendado: 800 x 1000 px (Vertical 4:5)</p>
+                    </div>
 
                     <button type="submit" disabled={saving}
                         style={{ alignSelf: 'flex-start', padding: '11px 28px', backgroundColor: editingId ? '#3A6A5A' : '#C9954A', color: 'white', border: 'none', borderRadius: '6px', cursor: saving ? 'not-allowed' : 'pointer', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>

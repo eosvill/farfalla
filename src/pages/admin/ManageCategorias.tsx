@@ -143,10 +143,19 @@ export default function ManageCategorias() {
                         <textarea value={form.intro} onChange={e => set('intro', e.target.value)} rows={4} style={{ ...inputSt, resize: 'vertical' }} placeholder="Descripción extensa de la categoría…" />
                     </div>
 
-                    <ImageUploader label="Imagen Hero (desktop)" value={form.imagen_hero} onChange={v => set('imagen_hero', v)} />
-                    <ImageUploader label="Imagen Tarjeta" value={form.imagen_card} onChange={v => set('imagen_card', v)} />
+                    <div>
+                        <ImageUploader label="Imagen Hero (desktop)" value={form.imagen_hero} onChange={v => set('imagen_hero', v)} />
+                        <p style={{ margin: '4px 0 0', fontSize: '0.75rem', color: '#888', fontFamily: "'Lato', sans-serif" }}>Recomendado: 1920 x 800 px (Apaisada)</p>
+                    </div>
+                    <div>
+                        <ImageUploader label="Imagen Tarjeta" value={form.imagen_card} onChange={v => set('imagen_card', v)} />
+                        <p style={{ margin: '4px 0 0', fontSize: '0.75rem', color: '#888', fontFamily: "'Lato', sans-serif" }}>Recomendado: 800 x 1000 px (Vertical 4:5)</p>
+                    </div>
 
-                    <ImageUploader label="Imagen Hero Mobile (vertical / portrait)" value={form.imagen_hero_mobile} onChange={v => set('imagen_hero_mobile', v)} />
+                    <div>
+                        <ImageUploader label="Imagen Hero Mobile (vertical / portrait)" value={form.imagen_hero_mobile} onChange={v => set('imagen_hero_mobile', v)} />
+                        <p style={{ margin: '4px 0 0', fontSize: '0.75rem', color: '#888', fontFamily: "'Lato', sans-serif" }}>Recomendado: 800 x 1200 px (Vertical 2:3)</p>
+                    </div>
 
                     <button type="submit" disabled={saving}
                         style={{ alignSelf: 'flex-start', padding: '11px 28px', backgroundColor: editingId ? '#3A6A5A' : '#C9954A', color: 'white', border: 'none', borderRadius: '6px', cursor: saving ? 'not-allowed' : 'pointer', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>

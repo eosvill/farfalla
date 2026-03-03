@@ -205,7 +205,10 @@ export default function ManageProductos() {
                         <textarea value={form.descripcion} onChange={e => set('descripcion', e.target.value)} rows={4} style={{ ...inputSt, resize: 'vertical' }} placeholder="Descripción detallada del diseño, materiales, energía…" />
                     </div>
 
-                    <ImageUploader label="Imagen del Producto" value={form.imagen} onChange={v => set('imagen', v)} />
+                    <div>
+                        <ImageUploader label="Imagen del Producto" value={form.imagen} onChange={v => set('imagen', v)} />
+                        <p style={{ margin: '4px 0 0', fontSize: '0.75rem', color: '#888', fontFamily: "'Lato', sans-serif" }}>Recomendado: 1200 x 1600 px (Vertical 3:4)</p>
+                    </div>
 
                     <div style={{ borderTop: '1px solid #F0EEE', paddingTop: '18px' }}>
                         <p style={{ ...labelSt, marginBottom: '12px', color: '#2D2420', fontSize: '0.9rem' }}>Asignaciones</p>
