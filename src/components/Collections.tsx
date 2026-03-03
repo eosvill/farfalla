@@ -93,69 +93,65 @@ export default function Collections() {
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.65, delay: i * 0.14 }}
                             >
-                                {/* Image — also a link */}
-                                <a href={`/producto/${item.categoria}`} style={{ display: 'block', textDecoration: 'none' }}>
-                                    <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden', marginBottom: '20px' }}>
-                                        {item.imagen_card ? (
-                                            <img
-                                                src={item.imagen_card}
-                                                alt={item.titulo}
-                                                loading="lazy"
-                                                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease', display: 'block', cursor: 'pointer' }}
-                                                onMouseEnter={e => ((e.currentTarget as HTMLElement).style.transform = 'scale(1.04)')}
-                                                onMouseLeave={e => ((e.currentTarget as HTMLElement).style.transform = 'scale(1)')}
-                                            />
-                                        ) : (
-                                            <div style={{ width: '100%', height: '100%', background: '#E8E2DB' }} />
-                                        )}
-                                    </div>
-                                </a>
-
-                                {/* Category label */}
-                                <p style={{
-                                    fontFamily: "'Cormorant Garamond', 'Georgia', 'serif'",
-                                    fontSize: '0.62rem', letterSpacing: '0.22em', textTransform: 'uppercase',
-                                    color: '#B8860B', marginBottom: '6px', fontWeight: 400,
-                                }}>{item.categoria.toUpperCase()}</p>
-
-                                {/* Title */}
-                                <h3 style={{
-                                    fontFamily: "'Lato', 'Helvetica', 'sans-serif'",
-                                    fontSize: '1.1rem', fontStyle: 'italic', fontWeight: 400,
-                                    color: '#2D2420', marginBottom: '10px', lineHeight: 1.4,
-                                }}>{item.titulo}</h3>
-
-                                {/* Subtitle / intro preview */}
-                                {(item.subtitulo || item.intro) && (
+                                <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                                    {/* Category label */}
                                     <p style={{
-                                        fontFamily: "'Lato', 'Helvetica', 'sans-serif'",
-                                        fontSize: '0.82rem', color: '#7A6E65', lineHeight: 1.8, marginBottom: '16px',
-                                    }}>
-                                        {item.subtitulo ?? item.intro?.slice(0, 120)}
-                                    </p>
-                                )}
+                                        fontFamily: "'Cormorant Garamond', 'Georgia', 'serif'",
+                                        fontSize: '0.62rem', letterSpacing: '0.22em', textTransform: 'uppercase',
+                                        color: '#B8860B', marginBottom: '12px', fontWeight: 400,
+                                    }}>{item.categoria.toUpperCase()}</p>
 
-                                {/* CTA link */}
-                                <a
-                                    href={`/producto/${item.categoria}`}
-                                    style={{
+                                    {/* Image — also a link */}
+                                    <a href={`/producto/${item.categoria}`} style={{ display: 'block', textDecoration: 'none', marginBottom: '20px' }}>
+                                        <div style={{ width: '100%', aspectRatio: '4/3', overflow: 'hidden' }}>
+                                            {item.imagen_card ? (
+                                                <img
+                                                    src={item.imagen_card}
+                                                    alt={item.titulo}
+                                                    loading="lazy"
+                                                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease', display: 'block', cursor: 'pointer' }}
+                                                    onMouseEnter={e => ((e.currentTarget as HTMLElement).style.transform = 'scale(1.04)')}
+                                                    onMouseLeave={e => ((e.currentTarget as HTMLElement).style.transform = 'scale(1)')}
+                                                />
+                                            ) : (
+                                                <div style={{ width: '100%', height: '100%', background: '#E8E2DB' }} />
+                                            )}
+                                        </div>
+                                    </a>
+
+                                    {/* Title */}
+                                    <h3 style={{
                                         fontFamily: "'Lato', 'Helvetica', 'sans-serif'",
-                                        fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase',
-                                        color: '#2D2420', fontWeight: 700, borderBottom: '1px solid #2D2420',
-                                        paddingBottom: '2px', transition: 'color 0.2s, borderColor 0.2s',
-                                        display: 'inline-flex', alignItems: 'center', gap: '6px',
-                                    }}
-                                    onMouseEnter={e => {
-                                        (e.currentTarget as HTMLElement).style.color = '#B8860B'
-                                            ; (e.currentTarget as HTMLElement).style.borderColor = '#B8860B'
-                                    }}
-                                    onMouseLeave={e => {
-                                        (e.currentTarget as HTMLElement).style.color = '#2D2420'
-                                            ; (e.currentTarget as HTMLElement).style.borderColor = '#2D2420'
-                                    }}
-                                >
-                                    Ver detalle
-                                </a>
+                                        fontSize: '1.2rem', fontStyle: 'italic', fontWeight: 400,
+                                        color: '#2D2420', marginBottom: '10px', lineHeight: 1.4,
+                                    }}>{item.titulo}</h3>
+
+                                    {/* Subtitle / intro preview */}
+                                    {(item.subtitulo || item.intro) && (
+                                        <p style={{
+                                            fontFamily: "'Lato', 'Helvetica', 'sans-serif'",
+                                            fontSize: '0.85rem', color: '#7A6E65', lineHeight: 1.8, marginBottom: '20px',
+                                        }}>
+                                            {item.subtitulo ?? item.intro?.slice(0, 120)}
+                                        </p>
+                                    )}
+
+                                    {/* CTA link */}
+                                    <a
+                                        href={`/producto/${item.categoria}`}
+                                        style={{
+                                            display: 'inline-flex', alignItems: 'center', padding: '12px 28px',
+                                            background: '#1A1A1A', color: '#FFFFFF', fontFamily: "'Lato', sans-serif",
+                                            fontSize: '0.85rem', fontWeight: 700, textDecoration: 'none',
+                                            borderRadius: '6px', transition: 'background 0.2s', marginTop: 'auto',
+                                            alignSelf: 'flex-start'
+                                        }}
+                                        onMouseEnter={e => (e.currentTarget.style.background = '#333')}
+                                        onMouseLeave={e => (e.currentTarget.style.background = '#1A1A1A')}
+                                    >
+                                        Ver detalle
+                                    </a>
+                                </div>
                             </motion.article>
                         ))}
                     </div>
