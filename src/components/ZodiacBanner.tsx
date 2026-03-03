@@ -49,7 +49,7 @@ export default function ZodiacBanner() {
                         marginBottom: '16px',
                     }}
                 >
-                    Tu piedra de poder según tu carta natal
+                    Tu piedra de poder según tu carta numerológica
                 </motion.h2>
 
                 {/* Thin gold line */}
@@ -78,8 +78,8 @@ export default function ZodiacBanner() {
                         marginBottom: '20px',
                     }}
                 >
-                    Las estrellas bajo las que naciste revelan qué energías te acompañan y cuáles necesitás
-                    fortalecer. Te guiamos para descubrir tu piedra personal a partir de tu carta astral.
+                    Los números asociados a tu nacimiento revelan qué energías te acompañan y cuáles necesitás
+                    fortalecer. Te guiamos para descubrir tu piedra personal a partir de tu carta numerológica.
                 </motion.p>
 
                 {/* Italic secondary text */}
